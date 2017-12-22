@@ -1,0 +1,23 @@
+{
+  "name": "debugger-sourcemaps",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "./",
+  "firefox": "../firefox/",
+  "talos_test_dir": "testing/talos/talos/tests/devtools/addon/content/pages/custom/debugger",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "clear-old-build": "rm -r $npm_package_firefox$npm_package_talos_test_dir",
+    "copy-assets":
+      "yarn build && cp README.md ./build && rm ./build/service-worker.js; cp -r ./build $npm_package_firefox$npm_package_talos_test_dir",
+    "copy-assets-windows": "yarn build && rm ./build/service-worker.js && cp -r ./build %npm_package_firefox%%npm_package_talos_test_dir%",
+    "eject": "react-scripts eject"
+  }
+}
