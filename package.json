@@ -6,6 +6,9 @@
   "firefox": "../firefox/",
   "talos_test_dir": "testing/talos/talos/tests/devtools/addon/content/pages/custom/debugger",
   "dependencies": {
+    "eslint": "^4.17.0",
+    "immutable": "^3.8.2",
+    "lodash": "^4.17.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17"
@@ -14,9 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "clear-old-build": "rm -r $npm_package_firefox$npm_package_talos_test_dir",
-    "copy-assets":
-      "yarn build && cp README.md ./build && rm ./build/service-worker.js; cp -r ./build $npm_package_firefox$npm_package_talos_test_dir",
+    "clear-old-build": "rm -r $npm_package_firefox$npm_package_talos_test_dir || true",
+    "copy-assets": "yarn clear-old-build && yarn build && cp README.md ./build && rm ./build/service-worker.js ./build/asset-manifest.json; cp -r ./build $npm_package_firefox$npm_package_talos_test_dir",
     "copy-assets-windows": "yarn build && rm ./build/service-worker.js && cp -r ./build %npm_package_firefox%%npm_package_talos_test_dir%",
     "eject": "react-scripts eject"
   }

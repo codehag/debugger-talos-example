@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import stepInTest from './step-in-test.js';
+import stepOverTest from './step-over-test.js';
 
 class App extends Component {
   render() {
@@ -13,6 +15,13 @@ class App extends Component {
       </div>
     );
   }
+}
+
+window.hitBreakpoint = function breakpoint() {
+  stepInTest();
+  stepOverTest();
+  console.log('hitting a breakpoint');
+  return;
 }
 
 export default App;
