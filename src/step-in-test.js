@@ -10189,7 +10189,7 @@ function f11(){
     return isNaN(undefined)
 }
 
-function startTest(){
+export function stepInTest(){
 
   f0();
   f1();
@@ -10207,4 +10207,22 @@ function startTest(){
 
 }
 
-export default startTest;
+export function debugStatement(){
+
+  debugger;
+  f0();
+  f1();
+  f2();
+  f3();
+  f4();
+  f5();
+  f6();
+  f7();
+  f8();
+  f9();
+  f10();
+  f11();
+  console.log('Done!');
+
+}
+
