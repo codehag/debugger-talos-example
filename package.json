@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "node ./scripts/build",
     "test": "react-scripts test --env=jsdom",
     "clear-old-build": "rm -r $npm_package_firefox$npm_package_talos_test_dir || true",
     "copy-assets": "yarn clear-old-build && yarn build && cp README.md ./build && rm ./build/service-worker.js ./build/asset-manifest.json; cp -r ./build $npm_package_firefox$npm_package_talos_test_dir",
